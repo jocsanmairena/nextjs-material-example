@@ -26,7 +26,8 @@ function ElevationScroll (props) {
 const Header = props => {
   return (
     <ElevationScroll>
-      <AppBar>
+      {/* defualt AppBar properties values */}
+      <AppBar position='fixed' color='primary'>
         <Toolbar>This is our header</Toolbar>
       </AppBar>
     </ElevationScroll>
