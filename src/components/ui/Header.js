@@ -1,6 +1,7 @@
 import React from 'react'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
+import Typography from '@material-ui/core/Typography'
 import useScrollTrigger from '@material-ui/core/useScrollTrigger'
 
 function ElevationScroll (props) {
@@ -28,7 +29,9 @@ const Header = props => {
     <ElevationScroll>
       {/* defualt AppBar properties values */}
       <AppBar position='fixed' color='primary'>
-        <Toolbar>This is our header</Toolbar>
+        <Toolbar>
+          <Typography variant='h3'>This is our header</Typography>
+        </Toolbar>
       </AppBar>
     </ElevationScroll>
   )
