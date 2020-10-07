@@ -7,6 +7,7 @@ const App = () => (
     <ThemeProvider theme={theme}>
       <Header>This is my header</Header>
     </ThemeProvider>
+    <div>This is some text</div>
   </>
 )
 

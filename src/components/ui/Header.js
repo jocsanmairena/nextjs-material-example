@@ -3,6 +3,7 @@ import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import useScrollTrigger from '@material-ui/core/useScrollTrigger'
+import { makeStyles } from '@material-ui/styles'
 
 function ElevationScroll (props) {
   const { children } = props
@@ -24,16 +25,29 @@ function ElevationScroll (props) {
   })
 }
 
+/* We pass theme as a parameter in order in orde to copy mixins.toolbar Object styles with the spread operator
+and now we can apply them to components */
+const useStyles = makeStyles(theme => ({
+  toolbarMargin: {
+    ...theme.mixins.toolbar
+  }
+}))
+
 const Header = props => {
+  const classes = useStyles()
+
   return (
-    <ElevationScroll>
-      {/* defualt AppBar properties values */}
-      <AppBar position='fixed' color='primary'>
-        <Toolbar>
-          <Typography variant='h3'>This is our header</Typography>
-        </Toolbar>
-      </AppBar>
-    </ElevationScroll>
+    <>
+      <ElevationScroll>
+        {/* defualt AppBar properties values */}
+        <AppBar position='fixed' color='primary'>
+          <Toolbar>
+            <Typography variant='h3'>This is our header</Typography>
+          </Toolbar>
+        </AppBar>
+      </ElevationScroll>
+      <div className={classes.toolbarMargin} />
+    </>
   )
 }
 
