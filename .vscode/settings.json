@@ -1,0 +1,8 @@
+{
+"typescript.format.semicolons": "remove",
+"editor.wordWrapColumn": 500,
+"editor.wrappingStrategy": "advanced",
+"editor.wordWrap": "wordWrapColumn",
+"editor.accessibilitySupport": "on",
+"html.format.wrapLineLength": 500
+}
