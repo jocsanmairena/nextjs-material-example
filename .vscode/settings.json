@@ -1,8 +1,217 @@
 {
-"typescript.format.semicolons": "remove",
-"editor.wordWrapColumn": 500,
-"editor.wrappingStrategy": "advanced",
-"editor.wordWrap": "wordWrapColumn",
-"editor.accessibilitySupport": "on",
-"html.format.wrapLineLength": 500
+  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+  "window.zoomLevel": 0,
+  "prettier.jsxBracketSameLine": true,
+  "editor.minimap.enabled": false,
+  //  "editor.matchBrackets": false,//
+  "[javascript]": {
+    "editor.defaultFormatter": "numso.prettier-standard-vscode"
+  },
+  "BracketHighlighter.border": "1px dotted white",
+  "BracketHighlighter.textDecoration": "none",
+  "BracketHighlighter.fontStyle": "normal",
+  "BracketHighlighter.fontWeight": "normal",
+  "explorer.confirmDelete": false,
+  "[css]": {
+    "editor.defaultFormatter": "svipas.prettier-plus"
+  },
+  "cSpell.userWords": ["middlewares"],
+  "workbench.startupEditor": "none",
+  "workbench.settings.useSplitJSON": true,
+  "prettier.spaceParenthesis": false,
+  "eslint.format.enable": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "prettier.singleQuote": true,
+  "breadcrumbs.enabled": true,
+  "prettier.trailingComma": "all",
+  "[json]": {
+    "editor.defaultFormatter": "numso.prettier-standard-vscode"
+  },
+  "editor.fontSize": 17,
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+  "tabnine.experimentalAutoImports": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "[html]": {
+    "editor.defaultFormatter": "SimonSiefke.prettier-vscode"
+  },
+  "editor.tabCompletion": "on",
+  "prettier.tabWidth": 4,
+  "editor.defaultFormatter": "numso.prettier-standard-vscode",
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "name": "One Dark italic",
+        "scope": [
+          "comment",
+          "entity.other.attribute-name",
+          "keyword",
+          "markup.underline.link",
+          "storage.modifier",
+          "storage.type",
+          "string.url",
+          "variable.language.super",
+          "variable.language.this"
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "name": "One Dark italic reset",
+        "scope": [
+          "keyword.operator",
+          "keyword.other.type",
+          "storage.modifier.import",
+          "storage.modifier.package",
+          "storage.type.built-in",
+          "storage.type.function.arrow",
+          "storage.type.generic",
+          "storage.type.java",
+          "storage.type.primitive"
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
+      }
+    ]
+  },
+  "prettier.defaultOptions": {},
+  "editor.detectIndentation": false,
+  "workbench.editor.titleScrollbarSizing": "large",
+  "git.enableSmartCommit": true,
+  "editor.matchBrackets": false,
+  "prettier.useTabs": true,
+  "files.insertFinalNewline": true,
+  "editor.wordWrapColumn": 500,
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "svipas.prettier-plus"
+  },
+  "javascript.preferences.importModuleSpecifier": "relative",
+  "javascript.preferences.importModuleSpecifierEnding": "index",
+  "editor.padding.top": 2,
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.preferences.importModuleSpecifierEnding": "index",
+  "general.addSemicolon": false,
+  "prettier.semi": false,
+  "markdown.preview.fontSize": 10,
+  "materialTheme.accent": "Bright Teal",
+  "terminal.integrated.rendererType": "dom",
+  "terminal.integrated.fontSize": 15,
+  "workbench.iconTheme": "simple-icons",
+  "files.trimFinalNewlines": true,
+  "workbench.colorTheme": "Chinolor",
+  "editor.tokenColorCustomizations": {
+    "comments": "#4b4b4b",
+    "textMateRules": [
+      {
+        "scope": ["variable.other.property.js", "string.unquoted.js"],
+        "settings": {
+          "foreground": "#ff99c4"
+        }
+      },
+      {
+        "scope": ["keyword.control.flow.js", "string.quoted.module.js"],
+        "settings": {
+          "foreground": "#ffed4d"
+        }
+      },
+      {
+        "scope": [
+          "support.class.component.open.jsx",
+          "support.class.component.close.jsx",
+          "variable.other.readwrite.js"
+        ],
+        "settings": {
+          "foreground": "#4aff53"
+        }
+      },
+      {
+        "scope": [
+          "entity.other.attribute-name.jsx",
+          "keyword.control.module.js"
+        ],
+        "settings": {
+          "foreground": "#ffddae"
+        }
+      },
+      {
+        "scope": ["keyword.control.module.js"],
+        "settings": {
+          "foreground": "#00b7ff"
+        }
+      },
+      {
+        "scope": ["entity.name.tag.open.jsx", "entity.name.tag.close.jsx"],
+        "settings": {
+          "foreground": "#807eff"
+        }
+      },
+      {
+        "scope": ["storage.type.js", "storage.type.function.js"],
+        "settings": {
+          "foreground": "#ff2b2b"
+        }
+      },
+      {
+        "scope": [
+          "entity.name.function.js",
+          "keyword.operator.assignment.jsx",
+          "storage.type.function.arrow.js"
+        ],
+        "settings": {
+          "foreground": "#f82eff"
+        }
+      },
+      {
+        "scope": [
+          "punctuation.definition.string.begin.js",
+          "punctuation.definition.string.end.js",
+          "punctuation.definition.string.begin.jsx",
+          "punctuation.definition.string.end.jsx"
+        ],
+        "settings": {
+          "foreground": "#00ff2a"
+        }
+      },
+      {
+        "scope": [
+          "punctuation.section.embedded.begin.jsx",
+          "punctuation.section.embedded.end.jsx"
+        ],
+        "settings": {
+          "foreground": "#fd4c4c"
+        }
+      },
+      {
+        "scope": ["string.quoted.single.js"],
+        "settings": {
+          "foreground": "#ffed4d"
+        }
+      },
+      {
+        "scope": ["variable.other.constant.object.js"],
+        "settings": {
+          "foreground": "#00ffbf"
+        }
+      },
+      {
+        "scope": ["meta.brace.curly.js"],
+        "settings": {
+          "foreground": "#006eff"
+        }
+      },
+      {
+        "scope": ["punctuation.definition.tag.jsx"],
+        "settings": {
+          "foreground": "#20ceda"
+        }
+      }
+    ]
+  },
+  "notebook.kernelProviderAssociations": [],
+  "editor.accessibilitySupport": "on",
+  "html.format.wrapLineLength": 500
 }
