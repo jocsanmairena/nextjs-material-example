@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 // @material-ui/core
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -63,14 +63,30 @@ const useStyles = makeStyles(theme => ({
 const Header = props => {
   const classes = useStyles()
 
+  /* The useState hook is supported by material ui Tabs component.
+  The value variable holds the index of our current tab. Tab index values start from 0 and end at n-1 index Tab value.
+  We handleTabChange with the help of setValue method*/
+
+  const [value, setValue] = useState(0)
+
+  const handleTabChange = (e, value) => {
+    setValue(value)
+  }
+
   return (
     <>
       <ElevationScroll>
-        {/* defualt AppBar properties values */}
+        {/* default AppBar properties values */}
         <AppBar position='fixed' color='primary'>
           <Toolbar disableGutters>
             <img alt='company logo' src={logo} className={classes.logo} />
-            <Tabs className={classes.tabContainer}>
+            {/* Tabs use the value attribute to indicate with tab is currently selected */}
+            <Tabs
+              className={classes.tabContainer}
+              value={value}
+              onChange={handleTabChange}
+              indicatorColor='primary'
+            >
               <Tab className={classes.tab} label='Home' />
               <Tab className={classes.tab} label='Services' />
               <Tab className={classes.tab} label='The Revolution' />
