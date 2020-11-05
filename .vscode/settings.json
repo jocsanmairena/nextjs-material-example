@@ -85,7 +85,7 @@
   "editor.matchBrackets": false,
   "prettier.useTabs": true,
   "files.insertFinalNewline": true,
-  "editor.wordWrapColumn": 500,
+  "editor.wordWrapColumn": 300,
   "[javascriptreact]": {
     "editor.defaultFormatter": "svipas.prettier-plus"
   },
@@ -109,13 +109,13 @@
       {
         "scope": ["variable.other.property.js", "string.unquoted.js"],
         "settings": {
-          "foreground": "#ff99c4"
+          "foreground": "#afa1ff"
         }
       },
       {
         "scope": ["keyword.control.flow.js", "string.quoted.module.js"],
         "settings": {
-          "foreground": "#ffed4d"
+          "foreground": "#fff38a"
         }
       },
       {
@@ -125,7 +125,7 @@
           "variable.other.readwrite.js"
         ],
         "settings": {
-          "foreground": "#4aff53"
+          "foreground": "#9fffa4"
         }
       },
       {
@@ -134,13 +134,13 @@
           "keyword.control.module.js"
         ],
         "settings": {
-          "foreground": "#ffddae"
+          "foreground": "#e65aab"
         }
       },
       {
         "scope": ["keyword.control.module.js"],
         "settings": {
-          "foreground": "#00b7ff"
+          "foreground": "#ff5ddc"
         }
       },
       {
@@ -152,19 +152,31 @@
       {
         "scope": ["storage.type.js", "storage.type.function.js"],
         "settings": {
-          "foreground": "#ff2b2b"
+          "foreground": "#ff7433"
+        }
+      },
+      {
+        "scope": ["entity.name.function.js"],
+        "settings": {
+          "foreground": "#3dffff"
         }
       },
       {
         "scope": [
-          "entity.name.function.js",
+          "storage.type.function.arrow.js",
+          "keyword.operator.assignment.js",
+          "keyword.operator.comparison.js",
+          "keyword.operator.logical.js",
+          "storage.type.function.arrow.jsx",
           "keyword.operator.assignment.jsx",
-          "storage.type.function.arrow.js"
+          "keyword.operator.comparison.jsx",
+          "keyword.operator.logical.jsx"
         ],
         "settings": {
-          "foreground": "#f82eff"
+          "foreground": "#0a8e97"
         }
       },
+
       {
         "scope": [
           "punctuation.definition.string.begin.js",
@@ -173,7 +185,7 @@
           "punctuation.definition.string.end.jsx"
         ],
         "settings": {
-          "foreground": "#00ff2a"
+          "foreground": "#acff8b"
         }
       },
       {
@@ -182,19 +194,19 @@
           "punctuation.section.embedded.end.jsx"
         ],
         "settings": {
-          "foreground": "#fd4c4c"
+          "foreground": "#fd754c"
         }
       },
       {
         "scope": ["string.quoted.single.js"],
         "settings": {
-          "foreground": "#ffed4d"
+          "foreground": "#fff457"
         }
       },
       {
         "scope": ["variable.other.constant.object.js"],
         "settings": {
-          "foreground": "#00ffbf"
+          "foreground": "#ffffff"
         }
       },
       {
@@ -204,14 +216,28 @@
         }
       },
       {
+        "scope": ["keyword.control"],
+        "settings": {
+          "foreground": "#ccd63d"
+        }
+      },
+      {
         "scope": ["punctuation.definition.tag.jsx"],
         "settings": {
           "foreground": "#20ceda"
+        }
+      },
+      {
+        "scope": ["variable.parameter"],
+        "settings": {
+          "foreground": "#ffba24"
         }
       }
     ]
   },
   "notebook.kernelProviderAssociations": [],
-  "editor.accessibilitySupport": "on",
-  "html.format.wrapLineLength": 500
+  "editor.accessibilitySupport": "off",
+  "html.format.wrapLineLength": 500,
+  "typescript.format.semicolons": "remove",
+  "editor.wordWrap": "wordWrapColumn"
 }

@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 // @material-ui/core
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
-import useScrollTrigger from '@material-ui/core/useScrollTrigger'
-import Tabs from '@material-ui/core/Tabs'
-import Tab from '@material-ui/core/Tab'
-import Button from '@material-ui/core/Button'
+import {
+  AppBar,
+  Button,
+  Tabs,
+  Tab,
+  Toolbar,
+  useScrollTrigger
+} from '@material-ui/core'
 // @material-ui/styles
 import { makeStyles } from '@material-ui/styles'
 
@@ -17,16 +19,16 @@ function ElevationScroll (props) {
   const { children } = props
   // Material UI Hook that checks events when the user scrolls
   const trigger = useScrollTrigger({
-    // Delay when user is scrolling is desabled
+    // Delay when user is scrolling is disabled
     disableHysteresis: true,
-    // Event handler will act imediately
+    // How far to scroll before triggering this event listener. When 0 Event handler will act immediately
     threshold: 0
   })
 
   /* Returns a new version of whatever component you are wrapping with ElevationScroll
   by cloning the children and then returning a copy of that element with a new elevation
   depending on whether or not the trigger has been set */
-  /* TODO: Learn how clineElement works */
+  /* TODO: Learn how cloneElement works */
   return React.cloneElement(children, {
     // If the user "trigger" the scroll event, then set elevation to 4, else, no elevation:  0.
     elevation: trigger ? 4 : 0
@@ -42,6 +44,9 @@ const useStyles = makeStyles(theme => ({
   },
   logo: {
     height: '7em'
+  },
+  logoContainer: {
+    padding: 0
   },
   tabContainer: {
     marginLeft: 'auto'
@@ -97,7 +102,9 @@ const Header = props => {
         {/* default AppBar properties values */}
         <AppBar position='fixed' color='primary'>
           <Toolbar disableGutters>
-            <img alt='company logo' src={logo} className={classes.logo} />
+            <Button className={classes.logoContainer} component='Link' to='/'>
+              <img alt='company logo' src={logo} className={classes.logo} />
+            </Button>
             {/* Tabs use the value attribute to indicate with tab is currently selected */}
             <Tabs
               className={classes.tabContainer}
