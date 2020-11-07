@@ -30,9 +30,7 @@
   "editor.fontSize": 17,
   "javascript.preferences.quoteStyle": "single",
   "typescript.preferences.quoteStyle": "single",
-  "tabnine.experimentalAutoImports": true,
-  "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
+"tabnine.experimentalAutoImports": true,
   "editor.formatOnType": true,
   "[html]": {
     "editor.defaultFormatter": "SimonSiefke.prettier-vscode"
@@ -113,6 +111,12 @@
         }
       },
       {
+        "scope": [ "string.unquoted.js"],
+        "settings": {
+          "foreground": "#f7a1ff"
+        }
+      },
+      {
         "scope": ["keyword.control.flow.js", "string.quoted.module.js"],
         "settings": {
           "foreground": "#fff38a"
@@ -173,7 +177,8 @@
           "keyword.operator.logical.jsx"
         ],
         "settings": {
-          "foreground": "#0a8e97"
+          "foreground": "#00a0ac"
+          
         }
       },
 
@@ -224,7 +229,7 @@
       {
         "scope": ["punctuation.definition.tag.jsx"],
         "settings": {
-          "foreground": "#20ceda"
+          "foreground": "#2aade9"
         }
       },
       {
@@ -239,5 +244,8 @@
   "editor.accessibilitySupport": "off",
   "html.format.wrapLineLength": 500,
   "typescript.format.semicolons": "remove",
-  "editor.wordWrap": "wordWrapColumn"
+"editor.wordWrap": "wordWrapColumn",
+"javascript.format.semicolons": "remove",
+"editor.formatOnSave": true,
+"editor.formatOnSaveMode": "modifications"
 }

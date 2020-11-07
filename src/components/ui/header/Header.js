@@ -1,39 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 // @material-ui/core
-import {
-  AppBar,
-  Button,
-  Tabs,
-  Tab,
-  Toolbar,
-  useScrollTrigger
-} from '@material-ui/core'
+import { AppBar, Button, Tabs, Tab, Toolbar } from '@material-ui/core'
 // @material-ui/styles
 import { makeStyles } from '@material-ui/styles'
-
 // App imports
-import logo from '../../assets/logo.svg'
-
-function ElevationScroll (props) {
-  const { children } = props
-  // Material UI Hook that checks events when the user scrolls
-  const trigger = useScrollTrigger({
-    // Delay when user is scrolling is disabled
-    disableHysteresis: true,
-    // How far to scroll before triggering this event listener. When 0 Event handler will act immediately
-    threshold: 0
-  })
-
-  /* Returns a new version of whatever component you are wrapping with ElevationScroll
-  by cloning the children and then returning a copy of that element with a new elevation
-  depending on whether or not the trigger has been set */
-  /* TODO: Learn how cloneElement works */
-  return React.cloneElement(children, {
-    // If the user "trigger" the scroll event, then set elevation to 4, else, no elevation:  0.
-    elevation: trigger ? 4 : 0
-  })
-}
+import logo from '../../../assets/logo.svg'
+import ElevationScroll from './ElevationScroll'
 
 /* We pass theme as a parameter in order in orde to copy mixins.toolbar Object styles with the spread operator
 and now we can apply them to components */
@@ -70,31 +43,44 @@ const Header = props => {
   const classes = useStyles()
 
   /* The useState hook is supported by material ui Tabs component.
-  The value variable holds the index of our current tab. Tab index values start from 0 and end at n-1 index Tab value.
-  We handleTabChange with the help of setValue method*/
+  The currentTabValue variable holds the index of our current tab. Tab index values start from 0 and end at n-1 index Tab value.
+  We handleTabChange with the help of setCurrentTab method*/
 
-  const [value, setValue] = useState(0)
+  const [currentTab, setCurrentTab] = useState(0)
 
-  const handleTabChange = (e, value) => {
-    setValue(value)
+  const handleTabChange = (e, newIndex) => {
+    setCurrentTab(newIndex)
   }
+  /**
+What does useEffect do? 
+By using this Hook, you tell React that your component needs to do something after render.
+React will remember the function you passed (we’ll refer to it as our “effect”), 
+and call it later after performing the DOM updates. In this effect, we set the current Tab,
+but we could also perform data fetching or call some other imperative API.
 
+Why is useEffect called inside a component?
+Placing useEffect inside the component lets us access the count state variable (or any props) right from the effect. We don’t need a special API to read it — it’s already in the function scope. Hooks embrace JavaScript closures and avoid introducing React-specific APIs where JavaScript already provides a solution.
+
+Does useEffect run after every render?
+ Yes! By default, it runs both after the first render and after every update. (We will later talk about how to customize this.) Instead of thinking in terms of “mounting” and “updating”, you might find it easier to think that effects happen “after render”. React guarantees the DOM has been updated by the time it runs the effects.
+
+*/
   useEffect(() => {
-    if (window.location.pathname === '/' && value !== 0) {
-      setValue(0)
-    } else if (window.location.pathname === '/services' && value !== 1) {
-      setValue(1)
-    } else if (window.location.pathname === '/revolution' && value !== 2) {
-      setValue(2)
-    } else if (window.location.pathname === '/about' && value !== 3) {
-      setValue(3)
-    } else if (window.location.pathname === '/contact' && value !== 4) {
-      setValue(4)
-    } else if (window.location.pathname === '/estimate' && value !== 5) {
-      setValue(5)
+    if (window.location.pathname === '/' && currentTab !== 0) {
+      setCurrentTab(0)
+    } else if (window.location.pathname === '/services' && currentTab !== 1) {
+      setCurrentTab(1)
+    } else if (window.location.pathname === '/revolution' && currentTab !== 2) {
+      setCurrentTab(2)
+    } else if (window.location.pathname === '/about' && currentTab !== 3) {
+      setCurrentTab(3)
+    } else if (window.location.pathname === '/contact' && currentTab !== 4) {
+      setCurrentTab(4)
+    } else if (window.location.pathname === '/estimate' && currentTab !== 5) {
+      setCurrentTab(5)
     }
-    // we let useEffect know that we are dependent on the value variable
-  }, [value])
+    // we let useEffect know that we are dependent on the currentTab variable
+  }, [currentTab])
 
   return (
     <>
@@ -102,13 +88,18 @@ const Header = props => {
         {/* default AppBar properties values */}
         <AppBar position='fixed' color='primary'>
           <Toolbar disableGutters>
-            <Button className={classes.logoContainer} component='Link' to='/'>
+            <Button
+              className={classes.logoContainer}
+              component='Link'
+              to='/'
+              onClick={() => setCurrentTab(0)}
+            >
               <img alt='company logo' src={logo} className={classes.logo} />
             </Button>
             {/* Tabs use the value attribute to indicate with tab is currently selected */}
             <Tabs
               className={classes.tabContainer}
-              value={value}
+              value={currentTab}
               onChange={handleTabChange}
               indicatorColor='primary'
             >

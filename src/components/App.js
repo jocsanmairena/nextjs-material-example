@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 // @material-ui/styles
 import { ThemeProvider } from '@material-ui/styles'
 // App imports
-import Header from './ui/Header'
+import Header from './ui/header/Header'
 import theme from './ui/Theme'
 
 const App = () => (
